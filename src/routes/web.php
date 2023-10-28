@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+route::get('/',[TodoController::class, 'index']);
+
+route::post('/todos',[TodoController::class, 'store']);
+
+Route::patch('/todos/update', [TodoController::class, 'update']);
+
+Route::delete('/todos/delete', [TodoController::class, 'destroy']);
+
+
+route::get('/categories', [CategoryController::class, 'index']);
+
+route::post('/categories',[CategoryController::class, 'store']);
+
+Route::patch('/categories/update', [CategoryController::class, 'update']);
+
+Route::delete('/categories/delete', [CategoryController::class, 'destroy']);
