@@ -38,7 +38,7 @@
             </tr>
             @foreach ($categories as $category)
             <tr class="category-table__row">
-                <td class="category-table__item>
+                <td class="category-table__item">
                     <form class="update-form" action="/categories/update" method="post">
                         @method('patch')
                         @csrf
